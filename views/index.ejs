@@ -7,9 +7,15 @@
   </head>
   <body>
     <%- include("navbar", {isIndex: true}) %>
+
     <ul>
-      <% messages.forEach((message) => { %> <%- include("message", { message:
-      message }); %> <% }); %>
+      <% messages.forEach((message, index) => { %>
+      <li>
+        <a href="/message/<%= index %>">
+          <%- include("message", {message: message}); %>
+        </a>
+      </li>
+      <% }); %>
     </ul>
   </body>
 </html>

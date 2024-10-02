@@ -19,4 +19,13 @@ export default {
     messages.push({ text: message, user: author, added: new Date() });
     res.redirect("/");
   },
+  showMessageById: (req, res) => {
+    const { id } = req.params;
+
+    if (messages[id]) {
+      res.render("message-details", { message: messages[id] });
+    } else {
+      res.status(404).render("404");
+    }
+  },
 };

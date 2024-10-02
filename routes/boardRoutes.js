@@ -6,5 +6,6 @@ const router = express.Router();
 router.get("/", controller.getMessages);
 router.get("/new", controller.getNewMessageForm);
 router.post("/new", controller.addMessage);
+router.get("/message/:id", controller.showMessageById);
 
 export default router;
