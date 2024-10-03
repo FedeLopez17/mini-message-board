@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Message - <%= message.author %></title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Message - <%= message.user %></title>
   </head>
   <body>
     <%- include("navbar") %>
-    
-    <%- include("message", {message: message}); %>
+
+    <section class="container-flex-1">
+      <%- include("message", {message: message}); %>
+    </section>
+
+    <%- include("footer") %>
   </body>
 </html>

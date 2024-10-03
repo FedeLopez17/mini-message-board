@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: min(95%, 1350px);
+  margin: 0 auto;
+  background: rgb(2, 8, 23);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 8, 23, 1) 0%,
+    rgba(5, 16, 43, 1) 65%
+  );
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 60px;
+}
+
+nav h1 {
+  font-weight: 400;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+  color: unset;
+  text-decoration: none;
+}
+
+button.add-message {
+  background-color: transparent;
+  color: whitesmoke;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  outline: solid 1px #ffffff4a;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button.add-message:hover {
+  outline-color: #ffffff6c;
+  box-shadow: inset 0px 0px 2px 2px #ffffff1f;
+}
+
+.message-icon {
+  background: url(/message-icon.svg);
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.messages-list {
+  list-style-type: none;
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+  flex: 1;
+}
+
+.message {
+  margin-bottom: 20px;
+  border-bottom: solid 1px #ffffff4a;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 120px;
+}
+
+.message.in-index {
+  height: 120px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s forwards;
+  /* Stagger animation based on index */
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message.in-index > * {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+
+.message.in-index:hover {
+  border-bottom-color: #ffffff6c;
+  box-shadow: inset 0px -50px 50px -60px #ffffff1f;
+}
+
+.message > * {
+  margin-left: 10px;
+}
+
+.message-author {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.message-text {
+  font-size: 1rem;
+  font-weight: 200;
+  opacity: 0.9;
+}
+
+.message-date {
+  font-size: 0.9rem;
+  font-weight: 100;
+  opacity: 0.8;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: min(600px, 100%);
+  margin: 0 auto;
+  gap: 10px;
+  flex: 1;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button.add-message {
+  width: fit-content;
+  margin-left: auto;
+}
+
+form input,
+form textarea {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #ffffff4a;
+  box-sizing: border-box;
+  padding-left: 4px;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.774);
+  font-weight: 200;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin: 120px 0 15px;
+  font-size: 0.8rem;
+}
+
+footer > * {
+  opacity: 0.8;
+}
+
+footer > *:hover {
+  opacity: 1;
+}
+
+footer .github-icon {
+  background: url(/github-mark-white.svg);
+  background-size: contain;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.container-flex-1 {
+  flex: 1;
+}
+
+.container-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

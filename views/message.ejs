@@ -1,8 +1,8 @@
-<section>
-  <p><%= message.text %></p>
-  <p>
-    <span><%= message.user %></span>
-    -
-    <span><%= message.added.toLocaleDateString() %></span>
-  </p>
+<section
+  class="message <%= locals.class || '' %>"
+  <%= typeof index !== 'undefined' ? `style="--index: ${index};"` : '' %>
+>
+  <p class="message-author"><%= message.user %></p>
+  <p class="message-text"><%= message.text %></p>
+  <p class="message-date"><%= message.added.toLocaleDateString() %></p>
 </section>

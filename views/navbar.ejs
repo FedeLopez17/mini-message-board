@@ -1,7 +1,7 @@
 <nav>
-  <h1>Message Board</h1>
+  <a href="/"><h1>Message Board</h1></a>
 
   <% if(locals.isIndex){%>
-  <a href="/new"><button type="button">Add message</button></a>
+  <a href="/new"><button type="button" class="add-message">Add Message <span class="message-icon"></span></button></a>
   <% } %>
 </nav>

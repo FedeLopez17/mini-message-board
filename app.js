@@ -12,6 +12,8 @@ app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
 
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use("/", boardRouter);
 app.use((req, res) => res.status(404).render("404"));
 
