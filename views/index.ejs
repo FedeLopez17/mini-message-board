@@ -13,7 +13,7 @@
     <ul class="messages-list">
       <% messages.forEach((message, index) => { %>
       <li>
-        <a href="/message/<%= index %>">
+        <a href="/message/<%= message.message_id %>">
           <%- include("message", {message: message, class: "in-index", index:
           index}); %>
         </a>
