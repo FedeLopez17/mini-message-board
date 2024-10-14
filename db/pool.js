@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const pool = new Pool({
-  connectionString: `postgresql://${process.env.DB_ROLE}:${process.env.DB_ROLE_PASSWORD}@localhost:5432/messageboard`,
+  connectionString: process.env.DATABASE_URL,
 });
 
 export default pool;
