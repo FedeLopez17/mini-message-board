@@ -2,7 +2,7 @@
   class="message <%= locals.class || '' %>"
   <%= typeof index !== 'undefined' ? `style="--index: ${index};"` : '' %>
 >
-  <p class="message-author"><%= message.user %></p>
-  <p class="message-text"><%= message.text %></p>
-  <p class="message-date"><%= message.added.toLocaleDateString() %></p>
+  <p class="message-author"><%= message.author %></p>
+  <p class="message-text"><%= message.message_text %></p>
+  <p class="message-date"><%= message.created_at.toLocaleDateString() %></p>
 </section>
